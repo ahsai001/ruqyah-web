@@ -1199,5 +1199,324 @@ const PLAYLIST = [
         "verseId": "waswas-nas"
       }
     ]
+  },
+{
+    "id": "jin",
+    "title": "Ruqyah Jin Leluhur",
+    "subtitle": "Pemutus Ikatan Nasab, Jin Leluhur & Sihir Turun-temurun",
+    "description": "Ayat-ayat pemutus hubungan nasab dengan jin, meluruskan garis keturunan, dan memutus sihir yang diwariskan turun-temurun.",
+    "src": "ruqyah-jin-leluhur.m4a",
+    "duration": 646,
+    "durationStr": "10:46",
+    "verses": [
+      {
+        "id": "jin-shaffat",
+        "surah": "QS. As-Saffat : 158",
+        "arabic": "وَجَعَلُوا۟ بَيْنَهُۥ وَبَيْنَ ٱلْجِنَّةِ نَسَبًۭا ۚ وَلَقَدْ عَلِمَتِ ٱلْجِنَّةُ إِنَّهُمْ لَمُحْضَرُونَ",
+        "latin": "Wa ja'aloo bainahoo wa bainal jinnati nasabaa; wa laqad 'alimatil jinnatu innahum lamuhdaroon",
+        "translation": "Dan mereka mengadakan (hubungan) nasab (keluarga) antara Dia (Allah) dan jin. Dan sungguh, jin telah mengetahui bahwa mereka pasti akan diseret (ke neraka),"
+      },
+      {
+        "id": "jin-anam100",
+        "surah": "QS. Al-An'am : 100",
+        "arabic": "وَجَعَلُوا۟ لِلَّهِ شُرَكَآءَ ٱلْجِنَّ وَخَلَقَهُمْ ۖ وَخَرَقُوا۟ لَهُۥ بَنِينَ وَبَنَٰتٍۭ بِغَيْرِ عِلْمٍۢ ۚ سُبْحَٰنَهُۥ وَتَعَٰلَىٰ عَمَّا يَصِفُونَ",
+        "latin": "Wa ja'aloo lillaahi shurakaaa'al jinna wa khalaqa hum wa kharaqoo lahoo baneena wa banaatim bighairi 'ilm Subhaanahoo wa Ta'aalaa 'amma yasifoon",
+        "translation": "Dan mereka (orang-orang musyrik) menjadikan jin sekutu-sekutu Allah, padahal Dia yang menciptakannya (jin-jin itu), dan mereka berbohong (dengan mengatakan), “Allah mempunyai anak laki-laki dan anak perempuan,” tanpa (dasar) pengetahuan. Mahasuci Allah dan Mahatinggi dari sifat-sifat yang mereka gambarkan."
+      },
+      {
+        "id": "jin-saba40",
+        "surah": "QS. Saba' : 40",
+        "arabic": "وَيَوْمَ يَحْشُرُهُمْ جَمِيعًۭا ثُمَّ يَقُولُ لِلْمَلَٰٓئِكَةِ أَهَٰٓؤُلَآءِ إِيَّاكُمْ كَانُوا۟ يَعْبُدُونَ",
+        "latin": "Wa yawma yahshuruhum jamee'an summa yaqoolu lilmalaaa'ikati a-haaa'ulaaa'i iyyaakum kaanoo ya'budoon",
+        "translation": "Dan (ingatlah) pada hari (ketika) Allah mengumpulkan mereka semuanya kemudian Dia berfirman kepada para malaikat, “Apakah kepadamu mereka ini dahulu menyembah?”"
+      },
+      {
+        "id": "jin-saba41",
+        "surah": "QS. Saba' : 41",
+        "arabic": "قَالُوا۟ سُبْحَٰنَكَ أَنتَ وَلِيُّنَا مِن دُونِهِم ۖ بَلْ كَانُوا۟ يَعْبُدُونَ ٱلْجِنَّ ۖ أَكْثَرُهُم بِهِم مُّؤْمِنُونَ",
+        "latin": "Qaaloo Subhaanaka Anta waliyyunaa min doonihim bal kaanoo ya'budoonal jinna aksaruhum bihim mu'minoon",
+        "translation": "Para malaikat itu menjawab, “Mahasuci Engkau. Engkaulah pelindung kami, bukan mereka; bahkan mereka telah menyembah jin; kebanyakan mereka beriman kepada jin itu.”"
+      },
+      {
+        "id": "jin-jinn6",
+        "surah": "QS. Al-Jinn : 6",
+        "arabic": "وَأَنَّهُۥ كَانَ رِجَالٌۭ مِّنَ ٱلْإِنسِ يَعُوذُونَ بِرِجَالٍۢ مِّنَ ٱلْجِنِّ فَزَادُوهُمْ رَهَقًۭا",
+        "latin": "Wa annahoo kaana rijaa lum minal insi ya'oozoona birijaalim minal jinni fazaa doohum rahaqaa",
+        "translation": "Dan sesungguhnya ada beberapa orang laki-laki dari kalangan manusia yang meminta perlindungan kepada beberapa laki-laki dari jin, tetapi mereka (jin) menjadikan mereka (manusia) bertambah sesat"
+      },
+      {
+        "id": "jin-anam128",
+        "surah": "QS. Al-An'am : 128",
+        "arabic": "وَيَوْمَ يَحْشُرُهُمْ جَمِيعًۭا يَٰمَعْشَرَ ٱلْجِنِّ قَدِ ٱسْتَكْثَرْتُم مِّنَ ٱلْإِنسِ ۖ وَقَالَ أَوْلِيَآؤُهُم مِّنَ ٱلْإِنسِ رَبَّنَا ٱسْتَمْتَعَ بَعْضُنَا بِبَعْضٍۢ وَبَلَغْنَآ أَجَلَنَا ٱلَّذِىٓ أَجَّلْتَ لَنَا ۚ قَالَ ٱلنَّارُ مَثْوَىٰكُمْ خَٰلِدِينَ فِيهَآ إِلَّا مَا شَآءَ ٱللَّهُ ۗ إِنَّ رَبَّكَ حَكِيمٌ عَلِيمٌۭ",
+        "latin": "Wa yamwa yahshuruhum jamee'ai yaa ma'sharal jinni qadistaksartum minal insi wa qaala awliyaaa'uhy minal insi Rabbanas tamta'a ba'dunaa biba'dinw wa balaghnaaa ajalannal lazeee ajjalta lanaa; qaalan Naaru maswaakum khaalideena feehaaa illaa maa shaaa'allaah; inna Rabbaka Hakeemun 'Aleem",
+        "translation": "Dan (ingatlah) pada hari ketika Dia mengumpulkan mereka semua (dan Allah berfirman), “Wahai golongan jin! Kamu telah banyak (menyesatkan) manusia.” Dan kawan-kawan mereka dari golongan manusia berkata, “Ya Tuhan, kami telah saling mendapatkan kesenangan dan sekarang waktu yang telah Engkau tentukan buat kami telah datang.” Allah berfirman, “Nerakalah tempat kamu selama-lamanya, kecuali jika Allah menghendaki lain.” Sungguh, Tuhanmu Mahabijaksana, Maha Mengetahui."
+      },
+      {
+        "id": "jin-tawbah1",
+        "surah": "QS. At-Tawbah : 1",
+        "arabic": "بَرَآءَةٌ مِّنَ ٱللَّهِ وَرَسُولِهِۦٓ إِلَى ٱلَّذِينَ عَـٰهَدتُّم مِّنَ ٱلْمُشْرِكِينَ",
+        "latin": "Barā'atum minallāhi wa rasūlihī ilal-ladzīna 'āhadtum minal-musyrikīn.",
+        "translation": "(Inilah pernyataan) pemutusan hubungan dari Allah dan Rasul-Nya kepada orang-orang musyrik yang kamu telah mengadakan perjanjian (dengan mereka)."
+      },
+      {
+        "id": "jin-anam162",
+        "surah": "QS. Al-An'am : 162-163",
+        "arabic": "قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ ۝ لَا شَرِيكَ لَهُۥ ۖ وَبِذَٰلِكَ أُمِرْتُ وَأَنَا۠ أَوَّلُ ٱلْمُسْلِمِينَ",
+        "latin": "Qul inna shalātī wa nusukī wa mahyāya wa mamātī lillāhi rabbil-'ālamīn. Lā syarīka lahū wa bidzālika umirtu wa ana awwalul-muslimīn.",
+        "translation": "Katakanlah, “Sesungguhnya shalatku, sembelihanku, hidupku dan matiku hanyalah untuk Allah, Tuhan seluruh alam, tidak ada sekutu bagi-Nya; dan demikianlah yang diperintahkan kepadaku dan aku adalah orang yang pertama-tama berserah diri (muslim).”"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 4,
+        "end": 16.0,
+        "verseId": "jin-shaffat"
+      },
+      {
+        "start": 16.0,
+        "end": 33.0,
+        "verseId": "jin-anam100"
+      },
+      {
+        "start": 33.0,
+        "end": 46.5,
+        "verseId": "jin-saba40"
+      },
+      {
+        "start": 46.5,
+        "end": 59.5,
+        "verseId": "jin-saba41"
+      },
+      {
+        "start": 59.5,
+        "end": 70.0,
+        "verseId": "jin-jinn6"
+      },
+      {
+        "start": 70.0,
+        "end": 84.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 84.0,
+        "end": 93.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 93.0,
+        "end": 106.5,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 106.5,
+        "end": 116.0,
+        "verseId": "jin-tawbah1"
+      },
+      {
+        "start": 116.0,
+        "end": 131.5,
+        "verseId": "jin-anam162"
+      },
+      {
+        "start": 131.5,
+        "end": 144.0,
+        "verseId": "jin-shaffat"
+      },
+      {
+        "start": 144.0,
+        "end": 161.5,
+        "verseId": "jin-anam100"
+      },
+      {
+        "start": 161.5,
+        "end": 175.0,
+        "verseId": "jin-saba40"
+      },
+      {
+        "start": 175.0,
+        "end": 188.0,
+        "verseId": "jin-saba41"
+      },
+      {
+        "start": 188.0,
+        "end": 198.0,
+        "verseId": "jin-jinn6"
+      },
+      {
+        "start": 198.0,
+        "end": 212.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 212.0,
+        "end": 221.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 221.0,
+        "end": 235.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 235.0,
+        "end": 244.5,
+        "verseId": "jin-tawbah1"
+      },
+      {
+        "start": 244.5,
+        "end": 259.5,
+        "verseId": "jin-anam162"
+      },
+      {
+        "start": 259.5,
+        "end": 272.5,
+        "verseId": "jin-shaffat"
+      },
+      {
+        "start": 272.5,
+        "end": 289.5,
+        "verseId": "jin-anam100"
+      },
+      {
+        "start": 289.5,
+        "end": 303.0,
+        "verseId": "jin-saba40"
+      },
+      {
+        "start": 303.0,
+        "end": 316.0,
+        "verseId": "jin-saba41"
+      },
+      {
+        "start": 316.0,
+        "end": 326.5,
+        "verseId": "jin-jinn6"
+      },
+      {
+        "start": 326.5,
+        "end": 340.5,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 340.5,
+        "end": 349.5,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 349.5,
+        "end": 363.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 363.0,
+        "end": 372.5,
+        "verseId": "jin-tawbah1"
+      },
+      {
+        "start": 372.5,
+        "end": 388.0,
+        "verseId": "jin-anam162"
+      },
+      {
+        "start": 388.0,
+        "end": 401.0,
+        "verseId": "jin-shaffat"
+      },
+      {
+        "start": 401.0,
+        "end": 418.0,
+        "verseId": "jin-anam100"
+      },
+      {
+        "start": 418.0,
+        "end": 431.5,
+        "verseId": "jin-saba40"
+      },
+      {
+        "start": 431.5,
+        "end": 444.5,
+        "verseId": "jin-saba41"
+      },
+      {
+        "start": 444.5,
+        "end": 455.0,
+        "verseId": "jin-jinn6"
+      },
+      {
+        "start": 455.0,
+        "end": 469.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 469.0,
+        "end": 478.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 478.0,
+        "end": 491.5,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 491.5,
+        "end": 501.0,
+        "verseId": "jin-tawbah1"
+      },
+      {
+        "start": 501.0,
+        "end": 516.5,
+        "verseId": "jin-anam162"
+      },
+      {
+        "start": 516.5,
+        "end": 529.0,
+        "verseId": "jin-shaffat"
+      },
+      {
+        "start": 529.0,
+        "end": 546.5,
+        "verseId": "jin-anam100"
+      },
+      {
+        "start": 546.5,
+        "end": 560.0,
+        "verseId": "jin-saba40"
+      },
+      {
+        "start": 560.0,
+        "end": 573.0,
+        "verseId": "jin-saba41"
+      },
+      {
+        "start": 573.0,
+        "end": 583.0,
+        "verseId": "jin-jinn6"
+      },
+      {
+        "start": 583.0,
+        "end": 597.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 597.0,
+        "end": 606.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 606.0,
+        "end": 620.0,
+        "verseId": "jin-anam128"
+      },
+      {
+        "start": 620.0,
+        "end": 629.5,
+        "verseId": "jin-tawbah1"
+      },
+      {
+        "start": 629.5,
+        "end": 646,
+        "verseId": "jin-anam162"
+      }
+    ]
   }
 ];

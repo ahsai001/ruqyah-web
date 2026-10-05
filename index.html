@@ -1080,11 +1080,11 @@
   <div class="toast" id="toast"></div>
 
   <!-- Scripts -->
-  <script src="data.js?v=2"></script>
+  <script src="data.js?v=3"></script>
   <script>
     // State
     // Default initial state: all tracks are selected!
-    let selectedTracks = new Set([0, 1, 2, 3]);
+    let selectedTracks = new Set(PLAYLIST.map((_, i) => i));
     let currentTrackIndex = 0;
     let isPlaying = false;
     let showLatin = true;
@@ -1262,8 +1262,8 @@
         showToast(`Hanya memutar: ${PLAYLIST[currentTrackIndex].title}`);
       } else {
         // Select all
-        selectedTracks = new Set([0, 1, 2, 3]);
-        showToast("Semua 4 trek telah dipilih");
+        selectedTracks = new Set(PLAYLIST.map((_, i) => i));
+        showToast(`Semua ${PLAYLIST.length} trek telah dipilih`);
       }
       renderTabs();
       updateStatusText();

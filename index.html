@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ruqyah Syar'iyyah — Penenang Jiwa & Penyembuh Hati</title>
+  <meta name="description" content="Lantunan Ruqyah Syar'iyyah penenang jiwa, penolak sihir, 'ain, gangguan was-was, dan tidur ketindihan. Berputar terus menerus menenangkan hati.">
+  <meta name="theme-color" content="#04120e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #030d0a;
+      --bg-surface: #071914;
+      --bg-card: #0c231c;
+      --bg-card-hover: #102e25;
+      --gold-primary: #d4af37;
+      --gold-light: #f5e298;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --emerald-glow: rgba(16, 185, 129, 0.2);
+      --text-main: #f1f5f3;
+      --text-muted: #8fa99f;
+      --text-sub: #5d756d;
+      --border-soft: rgba(212, 175, 55, 0.15);
+      --border-active: rgba(212, 175, 55, 0.6);
+      --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-arabic: 'Amiri', 'Scheherazade New', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 140px; /* Space for sticky player */
+      line-height: 1.6;
+    }
+
+    /* Ambient atmospheric background with subtle breathing pulse */
+    .ambient-glow {
+      position: fixed;
+      top: -20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      max-width: 900px;
+      height: 60vh;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%);
+      filter: blur(70px);
+      z-index: 0;
+      pointer-events: none;
+      animation: pulseAura 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseAura {
+      0% { opacity: 0.5; transform: translateX(-50%) scale(0.95); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 1.5rem 0 1.75rem;
+    }
+
+    .bismillah {
+      font-family: var(--font-arabic);
+      font-size: 1.85rem;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    .header-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: #34d399;
+      margin-top: 1rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Track Selection Section Header */
+    .selection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding: 0 0.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .selection-title-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 500;
+    }
+
+    .selection-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .select-all-btn {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-soft);
+      color: var(--gold-light);
+      border-radius: 8px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-ui);
+      font-weight: 600;
+    }
+
+    .select-all-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: var(--gold-primary);
+    }
+
+    /* Track Selector Tabs / Checkable Cards */
+    .track-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .track-tabs {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .track-tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 0.9rem 0.85rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      color: var(--text-muted);
+      position: relative;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 104px;
+    }
+
+    /* Selected state */
+    .track-tab-btn.selected {
+      background: linear-gradient(145deg, #0a251d 0%, #103429 100%);
+      border-color: rgba(212, 175, 55, 0.35);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .track-tab-btn.selected:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Unselected state */
+    .track-tab-btn.unselected {
+      background: rgba(10, 26, 21, 0.45);
+      border-color: rgba(255, 255, 255, 0.08);
+      opacity: 0.45;
+      filter: grayscale(40%);
+    }
+
+    .track-tab-btn.unselected:hover {
+      opacity: 0.8;
+      filter: grayscale(0%);
+      border-color: rgba(212, 175, 55, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Currently Playing Track */
+    .track-tab-btn.now-playing {
+      border-color: var(--gold-primary) !important;
+      background: linear-gradient(145deg, #0e3025 0%, #174537 100%) !important;
+      box-shadow: 0 0 20px var(--gold-glow), 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .tab-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .tab-badge {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    /* Checkbox indicator */
+    .check-indicator {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.25);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+    }
+
+    .track-tab-btn.selected .check-indicator {
+      background: #10b981;
+      border-color: #10b981;
+      color: #04120e;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    }
+
+    .check-indicator svg {
+      opacity: 0;
+      transform: scale(0.6);
+      transition: all 0.2s;
+    }
+
+    .track-tab-btn.selected .check-indicator svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .track-tab-btn .tab-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.3;
+      display: block;
+      color: inherit;
+      margin-bottom: 0.35rem;
+    }
+
+    .tab-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .track-tab-btn .tab-duration {
+      font-size: 0.72rem;
+      color: var(--text-sub);
+    }
+
+    .track-tab-btn.selected .tab-duration {
+      color: var(--text-muted);
+    }
+
+    /* Sound Wave animation for currently playing */
+    .playing-wave {
+      display: none;
+      align-items: center;
+      gap: 2.5px;
+      height: 12px;
+    }
+
+    .track-tab-btn.now-playing .playing-wave {
+      display: flex;
+    }
+
+    .wave-bar {
+      width: 2.5px;
+      background-color: var(--gold-primary);
+      border-radius: 1px;
+      animation: soundWave 1.2s infinite ease-in-out;
+    }
+    .wave-bar:nth-child(1) { height: 6px; animation-delay: 0s; }
+    .wave-bar:nth-child(2) { height: 12px; animation-delay: 0.2s; }
+    .wave-bar:nth-child(3) { height: 8px; animation-delay: 0.4s; }
+
+    @keyframes soundWave {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+
+    /* Active Track Hero Banner */
+    .hero-banner {
+      background: linear-gradient(180deg, rgba(14, 46, 36, 0.7) 0%, rgba(9, 29, 23, 0.9) 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 6px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-subtitle {
+      color: var(--gold-light);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Verses List Section */
+    .section-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .view-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .control-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .control-btn:hover {
+      color: #ffffff;
+      border-color: var(--gold-primary);
+    }
+
+    .control-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+
+    /* Verse Cards */
+    .verse-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .verse-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.3);
+    }
+
+    .verse-card.current-active {
+      border-color: var(--gold-primary);
+      background: linear-gradient(145deg, #0e2d23 0%, #133a2e 100%);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 25px var(--gold-glow);
+      border-left: 5px solid var(--gold-primary);
+      scroll-margin-top: 85px;
+      scroll-margin-bottom: 150px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .surah-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .recite-indicator {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #34d399;
+      font-weight: 600;
+    }
+
+    .verse-card.current-active .recite-indicator {
+      display: flex;
+    }
+
+    .play-verse-btn {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-soft);
+      color: var(--gold-light);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .play-verse-btn:hover {
+      background: var(--gold-primary);
+      color: #04120e;
+      transform: scale(1.1);
+    }
+
+    /* Arabic Text */
+    .arabic-text {
+      font-family: var(--font-arabic);
+      font-size: 1.85rem;
+      line-height: 2.2;
+      text-align: right;
+      direction: rtl;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      word-spacing: 3px;
+    }
+
+    .arabic-text.size-large {
+      font-size: 2.2rem;
+      line-height: 2.4;
+    }
+
+    .arabic-text.size-small {
+      font-size: 1.55rem;
+      line-height: 2.0;
+    }
+
+    /* Latin Transliteration */
+    .latin-text {
+      color: #d1dfd9;
+      font-size: 0.88rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      padding: 0.65rem 0.9rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 2px solid var(--gold-primary);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .latin-text.hidden {
+      display: none;
+    }
+
+    /* Indonesian Translation */
+    .trans-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* Sticky Bottom Player Bar */
+    .player-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(6, 21, 16, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      z-index: 100;
+      padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .player-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-bar-bg {
+      flex: 1;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+      touch-action: none;
+    }
+
+    .progress-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #10b981 0%, var(--gold-primary) 100%);
+      border-radius: 999px;
+      width: 0%;
+      pointer-events: none;
+    }
+
+    /* Controls Row */
+    .player-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .track-info-mini {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .mini-disc {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #134e3f 0%, #064e3b 100%);
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .mini-text {
+      min-width: 0;
+    }
+
+    .mini-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mini-sub {
+      font-size: 0.75rem;
+      color: var(--gold-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .main-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .btn-circle {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      padding: 0.4rem;
+      border-radius: 50%;
+    }
+
+    .btn-circle:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .btn-play-hero {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4af37 0%, #aa841f 100%);
+      color: #04120e;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px var(--gold-glow);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-play-hero:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-play-hero:active {
+      transform: scale(0.96);
+    }
+
+    /* Loop Mode Indicator */
+    .loop-badge {
+      font-size: 0.7rem;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Autoplay Unlock Overlay */
+    .bismillah-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 13, 10, 0.94);
+      backdrop-filter: blur(20px);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      transition: opacity 0.5s ease;
+    }
+
+    .bismillah-modal.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .modal-box {
+      max-width: 440px;
+      width: 100%;
+      background: linear-gradient(180deg, #09251d 0%, #061914 100%);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--gold-glow);
+    }
+
+    .start-ruqyah-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #d4af37 0%, #bb9324 100%);
+      border: none;
+      color: #04120e;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px var(--gold-glow);
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .start-ruqyah-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(14, 46, 36, 0.95);
+      border: 1px solid var(--gold-primary);
+      color: #ffffff;
+      padding: 0.65rem 1.35rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Adab Ruqyah Accordion */
+    .adab-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      margin-top: 2rem;
+      overflow: hidden;
+    }
+
+    .adab-header {
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .adab-header:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .adab-body {
+      padding: 0 1.25rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 1rem;
+      display: none;
+    }
+
+    .adab-body.open {
+      display: block;
+    }
+
+    .adab-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .adab-list li {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .adab-list li::before {
+      content: "✦";
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+      color: var(--text-sub);
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--gold-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient light animation -->
+  <div class="ambient-glow"></div>
+
+  <!-- Audio Autoplay Unlock Overlay -->
+  <div class="bismillah-modal" id="startModal">
+    <div class="modal-box">
+      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <h2 style="font-size: 1.35rem; color: #fff; margin-bottom: 0.5rem;">Ruqyah Syar'iyyah</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">
+        Dengarkan dengan khusyuk dan penuh tawakal kepada Allah Ta'ala. Audio akan berputar berurutan secara otomatis sesuai trek yang Anda pilih.
+      </p>
+      <button class="start-ruqyah-btn" id="btnStartAudio">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <span>Mulai Mendengarkan</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <h1>Ruqyah Syar'iyyah</h1>
+      <p class="header-desc">
+        Lantunan ayat-ayat Al-Qur'an dan doa perlindungan Nabawiyyah penenang jiwa, penolak bahaya 'ain, pelebur buhul sihir, dan pereda gangguan was-was.
+      </p>
+      <div class="status-badge" id="statusBadgeWrap">
+        <span class="pulse-dot"></span>
+        <span id="loopStatusText">Memuat daftar trek...</span>
+      </div>
+    </header>
+
+    <!-- Track Selector Header -->
+    <div class="selection-header">
+      <div class="selection-title-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+          <polyline points="9 11 12 14 22 4"></polyline>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        </svg>
+        <span>Pilihan Trek Pemutaran (Ketuk untuk Aktifkan / Lewati):</span>
+      </div>
+      <div class="selection-controls">
+        <button class="select-all-btn" id="btnSelectAll">Pilih Semua</button>
+      </div>
+    </div>
+
+    <!-- Track Selector Tabs (Multi-Selectable) -->
+    <div class="track-tabs" id="trackTabs">
+      <!-- Generated by JS -->
+    </div>
+
+    <!-- Active Track Hero Card -->
+    <div class="hero-banner" id="heroBanner">
+      <div class="hero-meta">
+        <span class="hero-tag" id="heroTag">Ruqyah Terpilih</span>
+        <span class="loop-badge" id="heroLoopBadge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span id="heroLoopText">Loop Otomatis Aktif</span>
+        </span>
+      </div>
+      <h2 class="hero-title" id="heroTitle">Memuat...</h2>
+      <div class="hero-subtitle" id="heroSubtitle"></div>
+      <p class="hero-desc" id="heroDesc"></p>
+    </div>
+
+    <!-- Verses Header & Adjusters -->
+    <div class="section-title-wrap">
+      <div class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>Ayat & Doa yang Dibacakan</span>
+      </div>
+      <div class="view-controls">
+        <button class="control-btn active" id="btnAutoScroll" title="Scroll Otomatis Mengikuti Bacaan">Auto-Scroll</button>
+        <button class="control-btn" id="btnToggleLatin" title="Tampilkan / Sembunyikan Cara Baca">Latin</button>
+        <button class="control-btn" id="btnFontToggle" title="Ubah Ukuran Tulisan Arab">Aa</button>
+      </div>
+    </div>
+
+    <!-- Verses List -->
+    <div id="versesList">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Adab Mendengarkan Ruqyah -->
+    <div class="adab-box">
+      <div class="adab-header" id="adabToggle">
+        <div style="font-weight: 600; font-size: 0.92rem; color: var(--gold-light); display: flex; align-items: center; gap: 0.5rem;">
+          <span>📖 Panduan & Adab Mendengarkan Ruqyah</span>
+        </div>
+        <span id="adabArrow" style="color: var(--text-muted); font-size: 0.8rem;">▼</span>
+      </div>
+      <div class="adab-body" id="adabContent">
+        <ul class="adab-list">
+          <li><strong>Ikhlas & Tawakal:</strong> Niatkan semata-mata mencari kesembuhan dan perlindungan hanya dari Allah Ta'ala.</li>
+          <li><strong>Bersuci / Berwudhu:</strong> Disunnahkan dalam keadaan suci dari hadats dan menghadap kiblat bila memungkinkan.</li>
+          <li><strong>Fokus & Tenang:</strong> Dengarkan lantunan dengan headphone atau speaker dalam ruangan yang hening. Pejamkan mata dan hayati maknanya.</li>
+          <li><strong>Bila Terjadi Reaksi:</strong> Jika merasakan hawa hangat, sendawa, atau getaran ringan, jangan takut. Lanjutkan mendengarkan dan basahi lisan dengan istighfar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p style="margin-bottom: 0.35rem;">Ruqyah Syar'iyyah • Audio Sumber: Indra Permana (Cahaya Ruqyah Indonesia)</p>
+      <p><a href="https://ahsailabs.my.id" target="_blank">Ahsailabs Studio</a> &copy; 2026. Semoga menjadi wasilah ketenangan dan kesembuhan.</p>
+    </footer>
+  </div>
+
+  <!-- Sticky Bottom Player Dock -->
+  <div class="player-dock">
+    <div class="player-inner">
+      <!-- Progress Bar -->
+      <div class="progress-wrap">
+        <span id="timeCurrent">00:00</span>
+        <div class="progress-bar-bg" id="progressBarBg">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <span id="timeDuration">00:00</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="player-controls-row">
+        <div class="track-info-mini">
+          <div class="mini-disc" id="miniDisc">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <div class="mini-text">
+            <div class="mini-title" id="miniTitle">Memuat audio...</div>
+            <div class="mini-sub" id="miniSub">Putar Otomatis</div>
+          </div>
+        </div>
+
+        <div class="main-buttons">
+          <!-- Prev Button -->
+          <button class="btn-circle" id="btnPrev" title="Trek Sebelumnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+            </svg>
+          </button>
+
+          <!-- Play/Pause Button -->
+          <button class="btn-play-hero" id="btnPlay" title="Putar / Jeda">
+            <svg id="playIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="pauseIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+
+          <!-- Next Button -->
+          <button class="btn-circle" id="btnNext" title="Trek Selanjutnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="audioPlayer" preload="auto"></audio>
+
+  <!-- Toast Notification element -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="data.js?v=2"></script>
+  <script>
+    // State
+    // Default initial state: all tracks are selected!
+    let selectedTracks = new Set([0, 1, 2, 3]);
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let showLatin = true;
+    let fontSizes = ['size-normal', 'size-large', 'size-small'];
+    let currentFontSizeIdx = 0;
+
+    // Elements
+    const audio = document.getElementById('audioPlayer');
+    const startModal = document.getElementById('startModal');
+    const btnStartAudio = document.getElementById('btnStartAudio');
+    const btnPlay = document.getElementById('btnPlay');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const progressBarBg = document.getElementById('progressBarBg');
+    const progressBarFill = document.getElementById('progressBarFill');
+    const timeCurrent = document.getElementById('timeCurrent');
+    const timeDuration = document.getElementById('timeDuration');
+    const miniTitle = document.getElementById('miniTitle');
+    const miniSub = document.getElementById('miniSub');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const heroDesc = document.getElementById('heroDesc');
+    const trackTabs = document.getElementById('trackTabs');
+    const versesList = document.getElementById('versesList');
+    const btnAutoScroll = document.getElementById('btnAutoScroll');
+    const btnToggleLatin = document.getElementById('btnToggleLatin');
+    const btnFontToggle = document.getElementById('btnFontToggle');
+    const adabToggle = document.getElementById('adabToggle');
+    const adabContent = document.getElementById('adabContent');
+    const adabArrow = document.getElementById('adabArrow');
+    const loopStatusText = document.getElementById('loopStatusText');
+    const heroLoopText = document.getElementById('heroLoopText');
+    const btnSelectAll = document.getElementById('btnSelectAll');
+    const toast = document.getElementById('toast');
+
+    // Show temporary feedback toast
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2400);
+    }
+
+    // Format Seconds to MM:SS
+    function fmtTime(sec) {
+      if (!sec || isNaN(sec)) return "00:00";
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    // Helper: Sorted selected track indices
+    function getSortedSelected() {
+      return Array.from(selectedTracks).sort((a, b) => a - b);
+    }
+
+    // Helper: Get next selected track in cyclic order
+    function getNextSelectedTrack(fromIdx) {
+      const list = getSortedSelected();
+      if (list.length === 0) return 0;
+      const next = list.find(i => i > fromIdx);
+      return next !== undefined ? next : list[0];
+    }
+
+    // Helper: Get previous selected track in cyclic order
+    function getPrevSelectedTrack(fromIdx) {
+      const list = getSortedSelected();
+      if (list.length === 0) return 0;
+      const prev = list.slice().reverse().find(i => i < fromIdx);
+      return prev !== undefined ? prev : list[list.length - 1];
+    }
+
+    // Update Status Texts
+    function updateStatusText() {
+      const totalSel = selectedTracks.size;
+      const totalTracks = PLAYLIST.length;
+
+      if (totalSel === totalTracks) {
+        loopStatusText.textContent = `Memutar Semua Trek (${totalSel} Trek) • Loop Otomatis`;
+        btnSelectAll.textContent = "Hapus Pilihan";
+      } else if (totalSel > 1) {
+        loopStatusText.textContent = `Memutar ${totalSel} dari ${totalTracks} Trek Terpilih • Loop Otomatis`;
+        btnSelectAll.textContent = "Pilih Semua";
+      } else {
+        loopStatusText.textContent = `Memutar 1 Trek Terpilih (Loop Berulang)`;
+        btnSelectAll.textContent = "Pilih Semua";
+      }
+
+      heroLoopText.textContent = totalSel > 1 
+        ? `${totalSel} Trek Berurutan Otomatis` 
+        : `1 Trek Diputar Berulang`;
+
+      miniSub.textContent = `${totalSel} Trek Terpilih • Loop Otomatis`;
+    }
+
+    // Toggle track selection
+    function toggleTrackSelection(idx) {
+      if (selectedTracks.has(idx)) {
+        // Attempting to unselect
+        if (selectedTracks.size <= 1) {
+          showToast("Minimal 1 trek harus dipilih untuk diputar");
+          return;
+        }
+        selectedTracks.delete(idx);
+        showToast(`Trek dilewati: ${PLAYLIST[idx].title}`);
+
+        // If the unselected track is currently playing, jump to next selected track!
+        if (currentTrackIndex === idx) {
+          const nextIdx = getNextSelectedTrack(currentTrackIndex);
+          selectTrack(nextIdx, isPlaying);
+        } else {
+          renderTabs();
+          updateStatusText();
+        }
+      } else {
+        // Selecting track
+        selectedTracks.add(idx);
+        showToast(`Trek aktif: ${PLAYLIST[idx].title}`);
+        // Immediately switch playback to this newly selected track
+        selectTrack(idx, isPlaying);
+      }
+    }
+
+    // Render Track Selection Cards
+    function renderTabs() {
+      trackTabs.innerHTML = '';
+      PLAYLIST.forEach((track, idx) => {
+        const isSelected = selectedTracks.has(idx);
+        const isNowPlaying = (idx === currentTrackIndex);
+
+        const card = document.createElement('div');
+        card.className = `track-tab-btn ${isSelected ? 'selected' : 'unselected'} ${isNowPlaying ? 'now-playing' : ''}`;
+        card.setAttribute('role', 'checkbox');
+        card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+        card.title = isSelected 
+          ? 'Trek aktif — Ketuk untuk menonaktifkan / melewati' 
+          : 'Trek nonaktif — Ketuk untuk mengaktifkan & memutar';
+
+        card.innerHTML = `
+          <div class="tab-top-row">
+            <span class="tab-badge">Trek ${idx + 1}</span>
+            <div class="check-indicator" title="${isSelected ? 'Trek Aktif' : 'Trek Dilewati'}">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+          </div>
+          <span class="tab-name">${track.title}</span>
+          <div class="tab-bottom-row">
+            <span class="tab-duration">${track.durationStr}</span>
+            <div class="playing-wave" title="Sedang Diputar">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+          </div>
+        `;
+
+        card.onclick = () => toggleTrackSelection(idx);
+        trackTabs.appendChild(card);
+      });
+
+      updateStatusText();
+    }
+
+    // Select All / Reset Toggle Button
+    btnSelectAll.addEventListener('click', () => {
+      if (selectedTracks.size === PLAYLIST.length) {
+        // Keep only current playing track
+        selectedTracks = new Set([currentTrackIndex]);
+        showToast(`Hanya memutar: ${PLAYLIST[currentTrackIndex].title}`);
+      } else {
+        // Select all
+        selectedTracks = new Set([0, 1, 2, 3]);
+        showToast("Semua 4 trek telah dipilih");
+      }
+      renderTabs();
+      updateStatusText();
+    });
+
+    let autoScrollEnabled = true;
+    let lastActiveVerseId = null;
+
+    // Smooth scroll to verse so it sits centrally in visible reading area
+    function scrollToVerse(verseId, force = false) {
+      if (!verseId) return;
+      if (!autoScrollEnabled && !force) return;
+
+      const card = document.getElementById('verse-card-' + verseId);
+      if (!card) return;
+
+      const rect = card.getBoundingClientRect();
+      const playerBar = document.getElementById('playerBar');
+      const bottomBarHeight = playerBar ? playerBar.offsetHeight : 120;
+      const visibleHeight = window.innerHeight - bottomBarHeight;
+
+      // Position the card in the middle of the available reading window above the sticky player
+      const cardTopInDoc = window.pageYOffset + rect.top;
+      let targetScrollY;
+      if (rect.height > visibleHeight * 0.75) {
+        targetScrollY = cardTopInDoc - 75;
+      } else {
+        targetScrollY = cardTopInDoc - (visibleHeight / 2) + (rect.height / 2);
+      }
+
+      window.scrollTo({
+        top: Math.max(0, targetScrollY),
+        behavior: 'smooth'
+      });
+    }
+
+    // Jump directly to verse recitation timestamp & center it
+    function jumpToVerse(verseId) {
+      const track = PLAYLIST[currentTrackIndex];
+      if (track.timeline && track.timeline.length > 0) {
+        const cur = audio.currentTime;
+        let targetEv = track.timeline.find(e => e.verseId === verseId && e.start >= cur);
+        if (!targetEv) {
+          targetEv = track.timeline.find(e => e.verseId === verseId);
+        }
+        if (targetEv) {
+          audio.currentTime = targetEv.start;
+          lastActiveVerseId = verseId;
+          scrollToVerse(verseId, true);
+          if (audio.paused) {
+            audio.play().then(() => setPlayState(true));
+          }
+        }
+      }
+    }
+
+    // Render Verses of Current Track
+    function renderVerses() {
+      const track = PLAYLIST[currentTrackIndex];
+      heroTitle.textContent = track.title;
+      heroSubtitle.textContent = track.subtitle;
+      heroDesc.textContent = track.description;
+      miniTitle.textContent = track.title;
+
+      versesList.innerHTML = '';
+      track.verses.forEach((verse) => {
+        const card = document.createElement('div');
+        card.className = 'verse-card';
+        card.id = `verse-card-${verse.id}`;
+        card.onclick = () => jumpToVerse(verse.id);
+        card.title = "Ketuk untuk lompat ke bacaan ayat ini";
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="surah-badge">${verse.surah}</span>
+            <div class="card-actions">
+              <div class="recite-indicator">
+                <span class="pulse-dot"></span>
+                <span>Sedang Dilantunkan</span>
+              </div>
+              <button class="play-verse-btn" title="Dengarkan ayat ini" onclick="event.stopPropagation(); jumpToVerse('${verse.id}')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="arabic-text ${fontSizes[currentFontSizeIdx]}">${verse.arabic}</div>
+          <div class="latin-text ${showLatin ? '' : 'hidden'}">${verse.latin}</div>
+          <div class="trans-text">${verse.translation}</div>
+        `;
+        versesList.appendChild(card);
+      });
+    }
+
+    // Select Track (Loads & switches view)
+    function selectTrack(idx, startPlayback = false) {
+      currentTrackIndex = idx;
+      if (!selectedTracks.has(idx)) {
+        selectedTracks.add(idx);
+      }
+      lastActiveVerseId = null;
+
+      renderTabs();
+      renderVerses();
+
+      const track = PLAYLIST[currentTrackIndex];
+      audio.src = track.src;
+      audio.load();
+
+      updateMediaSession(track);
+
+      if (startPlayback) {
+        audio.play().then(() => {
+          setPlayState(true);
+        }).catch(err => {
+          console.warn("Autoplay block:", err);
+          showModal();
+        });
+      }
+    }
+
+    // Media Session API for mobile lock screen & bluetooth
+    function updateMediaSession(track) {
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: track.title,
+          artist: "Cahaya Ruqyah Indonesia",
+          album: "Ruqyah Syar'iyyah Ahsailabs",
+          artwork: [
+            { src: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=512&q=80', sizes: '512x512', type: 'image/jpeg' }
+          ]
+        });
+
+        navigator.mediaSession.setActionHandler('play', () => { audio.play(); setPlayState(true); });
+        navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); setPlayState(false); });
+        navigator.mediaSession.setActionHandler('previoustrack', () => playPrev());
+        navigator.mediaSession.setActionHandler('nexttrack', () => playNext());
+      }
+    }
+
+    function setPlayState(playing) {
+      isPlaying = playing;
+      if (playing) {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+        document.getElementById('miniDisc').style.color = '#34d399';
+      } else {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+        document.getElementById('miniDisc').style.color = 'var(--gold-light)';
+      }
+      renderTabs();
+    }
+
+    // Advance only through selected tracks
+    function playNext() {
+      const nextIdx = getNextSelectedTrack(currentTrackIndex);
+      selectTrack(nextIdx, true);
+    }
+
+    function playPrev() {
+      const prevIdx = getPrevSelectedTrack(currentTrackIndex);
+      selectTrack(prevIdx, true);
+    }
+
+    // Event Listeners
+    btnPlay.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          setPlayState(true);
+        }).catch(e => {
+          showModal();
+        });
+      } else {
+        audio.pause();
+        setPlayState(false);
+      }
+    });
+
+    btnNext.addEventListener('click', playNext);
+    btnPrev.addEventListener('click', playPrev);
+
+    // Track ends -> Auto advance to next selected track
+    audio.addEventListener('ended', () => {
+      console.log("Track finished. Auto-advancing to next selected track...");
+      playNext();
+    });
+
+    // Time update & precise timeline-based verse highlight
+    audio.addEventListener('timeupdate', () => {
+      const cur = audio.currentTime;
+      const dur = audio.duration || PLAYLIST[currentTrackIndex].duration;
+      timeCurrent.textContent = fmtTime(cur);
+      timeDuration.textContent = fmtTime(dur);
+
+      if (dur > 0) {
+        const pct = (cur / dur) * 100;
+        progressBarFill.style.width = `${pct}%`;
+      }
+
+      // Synchronize verse highlighting based on exact timeline events
+      const track = PLAYLIST[currentTrackIndex];
+      let activeVerseId = null;
+      if (track.timeline && track.timeline.length > 0) {
+        for (const ev of track.timeline) {
+          if (cur >= ev.start && cur < ev.end) {
+            activeVerseId = ev.verseId;
+            break;
+          }
+        }
+      }
+
+      track.verses.forEach((verse) => {
+        const card = document.getElementById(`verse-card-${verse.id}`);
+        if (card) {
+          if (verse.id === activeVerseId && isPlaying) {
+            if (!card.classList.contains('current-active')) {
+              card.classList.add('current-active');
+            }
+          } else {
+            card.classList.remove('current-active');
+          }
+        }
+      });
+
+      // Automatically shift view to active recitation
+      if (activeVerseId && isPlaying) {
+        if (activeVerseId !== lastActiveVerseId) {
+          lastActiveVerseId = activeVerseId;
+          scrollToVerse(activeVerseId);
+        }
+      } else if (!activeVerseId) {
+        lastActiveVerseId = null;
+      }
+    });
+
+    // Seek on progress bar click
+    progressBarBg.addEventListener('click', (e) => {
+      const rect = progressBarBg.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const dur = audio.duration || PLAYLIST[currentTrackIndex].duration;
+      if (dur > 0) {
+        audio.currentTime = (clickX / width) * dur;
+      }
+    });
+
+    // Toggle Auto-Scroll
+    btnAutoScroll.addEventListener('click', () => {
+      autoScrollEnabled = !autoScrollEnabled;
+      btnAutoScroll.classList.toggle('active', autoScrollEnabled);
+      btnAutoScroll.textContent = autoScrollEnabled ? 'Auto-Scroll' : 'Scroll: Manual';
+      showToast(autoScrollEnabled ? '✅ Auto-scroll aktif' : '⏸️ Auto-scroll dijeda');
+      if (autoScrollEnabled && lastActiveVerseId) {
+        scrollToVerse(lastActiveVerseId, true);
+      }
+    });
+
+    // Toggle Latin
+    btnToggleLatin.addEventListener('click', () => {
+      showLatin = !showLatin;
+      btnToggleLatin.classList.toggle('active', showLatin);
+      document.querySelectorAll('.latin-text').forEach(el => {
+        el.classList.toggle('hidden', !showLatin);
+      });
+    });
+
+    // Toggle Arabic Font Size
+    btnFontToggle.addEventListener('click', () => {
+      currentFontSizeIdx = (currentFontSizeIdx + 1) % fontSizes.length;
+      document.querySelectorAll('.arabic-text').forEach(el => {
+        el.className = `arabic-text ${fontSizes[currentFontSizeIdx]}`;
+      });
+    });
+
+    // Toggle Adab Accordion
+    adabToggle.addEventListener('click', () => {
+      const isOpen = adabContent.classList.toggle('open');
+      adabArrow.textContent = isOpen ? '▲' : '▼';
+    });
+
+    // Modal show/hide
+    function showModal() {
+      startModal.classList.remove('fade-out');
+      startModal.style.display = 'flex';
+    }
+
+    function hideModal() {
+      startModal.classList.add('fade-out');
+      setTimeout(() => {
+        startModal.style.display = 'none';
+      }, 500);
+    }
+
+    btnStartAudio.addEventListener('click', () => {
+      hideModal();
+      audio.play().then(() => {
+        setPlayState(true);
+      }).catch(err => {
+        console.error("Audio playback error:", err);
+      });
+    });
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTabs();
+      renderVerses();
+      selectTrack(0, false);
+
+      // Attempt automatic playback on initial load
+      const tryAutoPlay = audio.play();
+      if (tryAutoPlay !== undefined) {
+        tryAutoPlay.then(() => {
+          setPlayState(true);
+          hideModal();
+        }).catch(() => {
+          // Autoplay was blocked by browser security policy: show polite Bismillah modal
+          showModal();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1073,21 +1073,12 @@
     </div>
   </div>
 
-  <!-- Audio Element -->
-  <audio id="audioPlayer" preload="auto"></audio>
-<script>
-const a=document.getElementById('audioPlayer');
-const srcs=[
-  {type:'audio/mp4',url:'ruqyah-ain.m4a'},
-  {type:'audio/mp4',url:'ruqyah-penghancur-sihir.m4a'},
-  {type:'audio/mp4',url:'ruqyah-sleep-paralysis.m4a'},
-  {type:'audio/mp4',url:'ruqyah-was-was.m4a'},
-  {type:'audio/mp4',url:'ruqyah-jin-leluhur.m4a'}
-];
-const fallback=srcs.find(s=>a.canPlayType(s.type));
-if(fallback){a.src=fallback.url;}
-else{a.parentNode.innerHTML='Audio tidak dapat diputar.';}
-</script>
+  <!-- Audio Element with multi-format fallback (AAC/M4A primary, MP3 fallback) -->
+  <audio id="audioPlayer" preload="auto">
+    <source id="audioSrcM4A" type="audio/mp4">
+    <source id="audioSrcMP3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio HTML5.
+  </audio>
 
   <!-- Toast Notification element -->
   <div class="toast" id="toast"></div>
@@ -1383,7 +1374,21 @@ else{a.parentNode.innerHTML='Audio tidak dapat diputar.';}
       renderVerses();
 
       const track = PLAYLIST[currentTrackIndex];
-      audio.src = track.src;
+      const m4aSrc = track.src;
+      const mp3Src = track.src.replace(/\.m4a$/, '.mp3');
+
+      const srcM4A = document.getElementById('audioSrcM4A');
+      const srcMP3 = document.getElementById('audioSrcMP3');
+      if (srcM4A && srcMP3) {
+        srcM4A.src = m4aSrc;
+        srcMP3.src = mp3Src;
+      }
+      // If browser can't play audio/mp4 natively, directly switch audio.src to mp3
+      if (audio.canPlayType && audio.canPlayType('audio/mp4') === '') {
+        audio.src = mp3Src;
+      } else {
+        audio.src = m4aSrc;
+      }
       audio.load();
 
       updateMediaSession(track);

@@ -1075,6 +1075,19 @@
 
   <!-- Audio Element -->
   <audio id="audioPlayer" preload="auto"></audio>
+<script>
+const a=document.getElementById('audioPlayer');
+const srcs=[
+  {type:'audio/mp4',url:'ruqyah-ain.m4a'},
+  {type:'audio/mp4',url:'ruqyah-penghancur-sihir.m4a'},
+  {type:'audio/mp4',url:'ruqyah-sleep-paralysis.m4a'},
+  {type:'audio/mp4',url:'ruqyah-was-was.m4a'},
+  {type:'audio/mp4',url:'ruqyah-jin-leluhur.m4a'}
+];
+const fallback=srcs.find(s=>a.canPlayType(s.type));
+if(fallback){a.src=fallback.url;}
+else{a.parentNode.innerHTML='Audio tidak dapat diputar.';}
+</script>
 
   <!-- Toast Notification element -->
   <div class="toast" id="toast"></div>
